@@ -9,8 +9,8 @@ const DATA_PATH = "data/recipes.json";
  */
 router.get("/", function (req, res, next) {
   console.log("reading file %o", DATA_PATH);
-  const teams = getRecipes();
-  res.json(teams);
+  const recipes = getRecipes();
+  res.json(recipes);
 });
 
 /**
@@ -36,9 +36,9 @@ router.post("/create", function (req, res, next) {
 router.delete("/delete", function (req, res, next) {
   const id = req.body.id;
 
-  const teams = getRecipes().filter(recipe => recipe.id != id);
+  const recipes = getRecipes().filter(recipe => recipe.id !== id);
 
-  setRecipes(teams);
+  setRecipes(recipes);
 
   res.json({ success: true });
 });
@@ -47,22 +47,17 @@ router.delete("/delete", function (req, res, next) {
  *
  */
 router.put("/update", function (req, res, next) {
-  const updatedRecipe = req.body;
-  //   const id = req.body.id;
-  //   const promotion = req.body.promotion;
-  //   const members = req.body.members;
-  //   const name = req.body.name;
-  //   const url = req.body.url;
+  const { name, weight, price, ingredients, id } = req.body;
 
   const recipes = getRecipes();
+  const recipe = recipes.find(recipe => recipe.id === id);
 
-  const recipe = recipes.find(recipe => recipe.id == id);
-  if (recipe) {
-    recipe = updatedRecipe;
-  }
+  if (name) recipe.name = name;
+  if (weight) recipe.weight = weight;
+  if (price) recipe.price = price;
+  if (ingredients) recipe.ingredients = ingredients;
 
   setRecipes(recipes);
-
   res.json({ success: true });
 });
 

@@ -1,29 +1,23 @@
 [
   {
-    "id": "9792973e-8ad6-49a9-9cc9-d86ddbe28791",
-    "name": "Pizza cu ton",
+    "id": "nbg9pw1664381625049",
+    "name": "pizza ok",
     "weight": 410,
     "price": 37,
-    "ingredients": "salam, mozzarela, sos de rosii, ton",
-    "alergens": "gluten, lactoza",
-    "instructions": "Lorem ex nulla culpa ad do reprehenderit. Enim Lorem incididunt exercitation ex ut adipisicing aliqua commodo. Reprehenderit sunt ipsum laboris eiusmod ullamco proident tempor quis exercitation anim cillum nostrud occaecat reprehenderit. Ex Lorem est enim laboris reprehenderit mollit cupidatat sint exercitation non non eiusmod cupidatat amet. Magna nisi irure nostrud anim occaecat enim eu aute laborum laborum."
+    "ingredients": "salam, mozzarela, sos de rosii, ton"
   },
   {
-    "name": "Pizza branza",
+    "id": "ughipq41664383798896",
+    "name": "ciorba",
     "weight": 410,
     "price": 37,
-    "ingredients": "salam, mozzarela, sos de rosii, ton",
-    "alergens": "gluten, lactoza",
-    "instructions": "Lorem ex nulla culpa ad do reprehenderit. Enim Lorem incididunt exercitation ex ut adipisicing aliqua commodo. Reprehenderit sunt ipsum laboris eiusmod ullamco proident tempor quis exercitation anim cillum nostrud occaecat reprehenderit. Ex Lorem est enim laboris reprehenderit mollit cupidatat sint exercitation non non eiusmod cupidatat amet. Magna nisi irure nostrud anim occaecat enim eu aute laborum laborum.",
-    "id": "4v5xdd1664373186051"
+    "ingredients": "salam, mozzarela, sos de rosii, ton"
   },
   {
-    "id": "576xvp1664373233758",
-    "name": "Pizza ciuperci",
+    "id": "d78no1664383969714",
+    "name": "pizza italiana",
     "weight": 410,
     "price": 37,
-    "ingredients": "salam, mozzarela, sos de rosii, ton",
-    "alergens": "gluten, lactoza",
-    "instructions": "Lorem ex nulla culpa ad do reprehenderit. Enim Lorem incididunt exercitation ex ut adipisicing aliqua commodo. Reprehenderit sunt ipsum laboris eiusmod ullamco proident tempor quis exercitation anim cillum nostrud occaecat reprehenderit. Ex Lorem est enim laboris reprehenderit mollit cupidatat sint exercitation non non eiusmod cupidatat amet. Magna nisi irure nostrud anim occaecat enim eu aute laborum laborum."
+    "ingredients": "salam, mozzarela, sos de rosii, ton"
   }
 ]

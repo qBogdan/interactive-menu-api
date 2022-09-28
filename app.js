@@ -9,6 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var teamsDBRouter = require("./routes/teams-db");
 var teamsRouter = require("./routes/teams-json");
+var recipesRouter = require("./routes/recipes-json");
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/teams", teamsDBRouter);
+app.use("/recipes", recipesRouter);
 
 function processingSimulate(req, res, next) {
   const wait = 500 + Math.floor(Math.random() * 6) * 100; // min-500ms + max-500ms
@@ -35,6 +37,7 @@ function processingSimulate(req, res, next) {
   }, wait);
 }
 app.use("/teams-json", processingSimulate, teamsRouter);
+app.use("/recipes-json", processingSimulate, recipesRouter);
 //app.use("/teams-json", teamsRouter);
 
 // catch 404 and forward to error handler

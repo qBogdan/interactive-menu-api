@@ -15,8 +15,7 @@
     "id": "rarww1664810866176"
   },
   {
-    "id": "c55ebp1664811024442",
-    "name": " TEST PIZZA",
+    "name": "recipe new",
     "category": "Pizza",
     "availability": true,
     "weight": 450,
@@ -27,11 +26,11 @@
       "sos de rosii",
       "ciuperci"
     ],
-    "img": "pizaQS"
+    "img": "pizzaQS",
+    "id": "osxs71664822852165"
   },
   {
-    "id": "gub14g1664821750996",
-    "name": "test retete",
+    "name": "abc",
     "category": "Pizza",
     "availability": true,
     "weight": 450,
@@ -42,6 +41,7 @@
       "sos de rosii",
       "ciuperci"
     ],
-    "img": "pizaQS"
+    "img": "pizzaQS",
+    "id": "v9mhyh1664823096094"
   }
 ]

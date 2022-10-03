@@ -1,23 +1,47 @@
 [
   {
-    "id": "nbg9pw1664381625049",
-    "name": "pizza ok",
-    "weight": 410,
-    "price": 37,
-    "ingredients": "salam, mozzarela, sos de rosii, ton"
+    "name": "Pizza IT",
+    "category": "Pizza",
+    "availability": true,
+    "weight": 450,
+    "price": 35,
+    "ingredients": [
+      "salam",
+      "mozzarela",
+      "sos de rosii",
+      "ciuperci"
+    ],
+    "img": "pizaQS",
+    "id": "rarww1664810866176"
   },
   {
-    "id": "ughipq41664383798896",
-    "name": "ciorba",
-    "weight": 410,
-    "price": 37,
-    "ingredients": "salam, mozzarela, sos de rosii, ton"
+    "id": "c55ebp1664811024442",
+    "name": " TEST PIZZA",
+    "category": "Pizza",
+    "availability": true,
+    "weight": 450,
+    "price": 35,
+    "ingredients": [
+      "salam",
+      "mozzarela",
+      "sos de rosii",
+      "ciuperci"
+    ],
+    "img": "pizaQS"
   },
   {
-    "id": "d78no1664383969714",
-    "name": "pizza italiana",
-    "weight": 410,
-    "price": 37,
-    "ingredients": "salam, mozzarela, sos de rosii, ton"
+    "id": "gub14g1664821750996",
+    "name": "test retete",
+    "category": "Pizza",
+    "availability": true,
+    "weight": 450,
+    "price": 35,
+    "ingredients": [
+      "salam",
+      "mozzarela",
+      "sos de rosii",
+      "ciuperci"
+    ],
+    "img": "pizaQS"
   }
 ]

@@ -17,8 +17,8 @@ router.get("/", function (req, res, next) {
  *
  */
 router.post("/create", function (req, res, next) {
-  const { name, category, availability, weight, price, ingredients, img } = req.body;
-  const recipe = { name, category, availability, weight, price, ingredients, img };
+  const { name, category, availability, eta, weight, price, ingredients, img } = req.body;
+  const recipe = { name, category, availability, eta, weight, price, ingredients, img };
 
   recipe.id = Math.random().toString(36).substring(7) + new Date().getTime();
 
@@ -28,7 +28,7 @@ router.post("/create", function (req, res, next) {
 
   setRecipes(recipes);
 
-  res.json({ success: true, id });
+  res.json({ success: true });
   res.status(201);
 });
 
@@ -38,7 +38,8 @@ router.post("/create", function (req, res, next) {
 router.delete("/delete", function (req, res, next) {
   const id = req.body.id;
 
-  const recipes = getRecipes().filter(recipe => recipe.id !== id);
+  let recipes = getRecipes();
+  recipes = recipes.filter(recipe => recipe.id !== id);
 
   setRecipes(recipes);
 
@@ -49,7 +50,7 @@ router.delete("/delete", function (req, res, next) {
  *
  */
 router.put("/update", function (req, res, next) {
-  const { name, category, availability, weight, price, ingredients, img } = req.body;
+  const { name, category, availability, eta, weight, price, ingredients, img, id } = req.body;
 
   const recipes = getRecipes();
   const recipe = recipes.find(recipe => recipe.id === id);
@@ -58,6 +59,7 @@ router.put("/update", function (req, res, next) {
   if (category) recipe.category = category;
   if (availability) recipe.availability = availability;
   if (weight) recipe.weight = weight;
+  if (eta) recipe.eta = eta;
   if (price) recipe.price = price;
   if (ingredients) recipe.ingredients = ingredients;
   if (img) recipe.img = img;

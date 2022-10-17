@@ -9,15 +9,17 @@ const DATA_PATH = "data/recipes.json";
  */
 router.get("/", function (req, res, next) {
   console.log("reading file %o", DATA_PATH);
-  const teams = getRecipes();
-  res.json(teams);
+  const recipes = getRecipes();
+  res.json(recipes);
 });
 
 /**
  *
  */
 router.post("/create", function (req, res, next) {
-  const recipe = req.body;
+  const { name, category, availability, eta, weight, price, ingredients, img } = req.body;
+  const recipe = { name, category, availability, eta, weight, price, ingredients, img };
+
   recipe.id = Math.random().toString(36).substring(7) + new Date().getTime();
 
   const recipes = getRecipes();
@@ -26,7 +28,7 @@ router.post("/create", function (req, res, next) {
 
   setRecipes(recipes);
 
-  res.json({ success: true, id });
+  res.json({ success: true });
   res.status(201);
 });
 
@@ -36,9 +38,10 @@ router.post("/create", function (req, res, next) {
 router.delete("/delete", function (req, res, next) {
   const id = req.body.id;
 
-  const teams = getRecipes().filter(recipe => recipe.id != id);
+  let recipes = getRecipes();
+  recipes = recipes.filter(recipe => recipe.id !== id);
 
-  setRecipes(teams);
+  setRecipes(recipes);
 
   res.json({ success: true });
 });
@@ -47,22 +50,21 @@ router.delete("/delete", function (req, res, next) {
  *
  */
 router.put("/update", function (req, res, next) {
-  const updatedRecipe = req.body;
-  //   const id = req.body.id;
-  //   const promotion = req.body.promotion;
-  //   const members = req.body.members;
-  //   const name = req.body.name;
-  //   const url = req.body.url;
+  const { name, category, availability, eta, weight, price, ingredients, img, id } = req.body;
 
   const recipes = getRecipes();
+  const recipe = recipes.find(recipe => recipe.id === id);
 
-  const recipe = recipes.find(recipe => recipe.id == id);
-  if (recipe) {
-    recipe = updatedRecipe;
-  }
+  if (name) recipe.name = name;
+  if (category) recipe.category = category;
+  if (availability) recipe.availability = availability;
+  if (weight) recipe.weight = weight;
+  if (eta) recipe.eta = eta;
+  if (price) recipe.price = price;
+  if (ingredients) recipe.ingredients = ingredients;
+  if (img) recipe.img = img;
 
   setRecipes(recipes);
-
   res.json({ success: true });
 });
 

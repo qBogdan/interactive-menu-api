@@ -1,14 +1,14 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-var fs = require("fs");
+var fs = require('fs');
 
-const DATA_PATH = "data/recipes.json";
+const DATA_PATH = 'data/recipes.json';
 
 /**
  *
  */
-router.get("/", function (req, res, next) {
-  console.log("reading file %o", DATA_PATH);
+router.get('/', function (req, res, next) {
+  console.log('reading file %o', DATA_PATH);
   const recipes = getRecipes();
   res.json(recipes);
 });
@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
 /**
  *
  */
-router.post("/create", function (req, res, next) {
+router.post('/create', function (req, res, next) {
   const { name, category, availability, eta, weight, price, ingredients, img } = req.body;
   const recipe = { name, category, availability, eta, weight, price, ingredients, img };
 
@@ -35,7 +35,7 @@ router.post("/create", function (req, res, next) {
 /**
  *
  */
-router.delete("/delete", function (req, res, next) {
+router.delete('/delete', function (req, res, next) {
   const id = req.body.id;
 
   let recipes = getRecipes();
@@ -49,15 +49,14 @@ router.delete("/delete", function (req, res, next) {
 /**
  *
  */
-router.put("/update", function (req, res, next) {
+router.put('/update', function (req, res, next) {
   const { name, category, availability, eta, weight, price, ingredients, img, id } = req.body;
 
   const recipes = getRecipes();
   const recipe = recipes.find(recipe => recipe.id === id);
-
   if (name) recipe.name = name;
   if (category) recipe.category = category;
-  if (availability) recipe.availability = availability;
+  if (availability !== undefined) recipe.availability = availability;
   if (weight) recipe.weight = weight;
   if (eta) recipe.eta = eta;
   if (price) recipe.price = price;
@@ -65,7 +64,7 @@ router.put("/update", function (req, res, next) {
   if (img) recipe.img = img;
 
   setRecipes(recipes);
-  res.json({ success: true });
+  res.json({ success: true, avTest: availability });
 });
 
 function getRecipes() {
